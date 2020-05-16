@@ -1,1 +1,6 @@
-log("I am the background script 🤗")
+(async () => {
+
+    const log = Logger("Background View")
+    log("Initializing.")
+
+})()

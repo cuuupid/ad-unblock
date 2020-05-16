@@ -1,1 +1,6 @@
-log("I am the blocker 😎")
+(async () => {
+
+    const log = Logger("Blocker")
+    log("Initializing.")
+
+})()

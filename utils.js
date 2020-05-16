@@ -1,1 +1,1 @@
-log = (..._) => console.log(["%c[Ad Unblock 🐱‍👤]", "background-color: #ff99ff; color: #000;"],..._)
+Logger = tag => (..._) => console.log(...[`%c[Ad Unblock 🐱‍👤 || ${tag}]`, "background-color: #ff99ff; color: #000;"],..._)

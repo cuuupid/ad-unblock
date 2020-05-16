@@ -6,14 +6,19 @@
         "webRequest",
         "webRequestBlocking",
         "http://*/",
-        "https://*/"
+        "https://*/",
+        "tabs"
     ],
     "background": {
         "scripts": [
             "utils.js",
-            "blocker.js",
-            "background.js"
+            "extension/blocker.js",
+            "extension/background.js"
         ]
     },
-    "manifest_version": 2
+    "browser_action": {
+        "default_popup": "panel/admin.html"
+    },
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

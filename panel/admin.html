@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="app">
+            <harassing-btn class="harassing-btn" :x="btnX" :y="btnY" inline-template>
+                <div :style="`left: ${x}; top: ${y};`">
+                    <a href="#" @click="click" class="disable-btn">Disable Ad-Unblock</a>
+                </div>
+            </harassing-btn>
+        </div>
+        <script src="../utils.js"></script>
+        <script src="vue.js"></script>
+        <script src="harass.js"></script>
+    </body>
+</html>

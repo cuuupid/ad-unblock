@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+}
+
+#app {
+    width: 500px;
+    height: 500px;
+    /* PepeLaugh */
+    background-color: #888;
+    color: #666;
+    font-size: 7pt;
+}
+
+.harassing-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.disable-btn {
+    color: unset;
+}

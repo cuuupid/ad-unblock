@@ -1,0 +1,19 @@
+{
+    "name": "Ad-Unblock",
+    "version": "1.0",
+    "description": "Blocks everything EXCEPT for ads.",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "http://*/",
+        "https://*/"
+    ],
+    "background": {
+        "scripts": [
+            "utils.js",
+            "blocker.js",
+            "background.js"
+        ]
+    },
+    "manifest_version": 2
+}

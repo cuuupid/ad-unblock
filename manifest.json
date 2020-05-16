@@ -11,6 +11,7 @@
     ],
     "background": {
         "scripts": [
+            "whitelist.js",
             "utils.js",
             "extension/blocker.js",
             "extension/background.js"

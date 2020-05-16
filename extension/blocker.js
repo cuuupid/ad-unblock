@@ -14,18 +14,26 @@
         allow: { cancel: false },
     }
 
-    const whitelist = [
-        /^[^:]*:(?:\/\/)?(?:[^\/]*\.)?helloaiko.com\/.*$/
-    ]
+    // don't use regex here it's wayyyy too slow
     const isAllowed = url => {
-        for (let domain of whitelist)
-            if (domain.test(url)) return true;
-        return false
+        if (!(url.includes('http://') || url.includes('https://'))) return true
+
+        const path = url.split('/')
+        const hostname =
+            // remove protocol
+            (url.includes('//') ? path[0] : path[2])
+            // remove port
+            .split(':')[0]
+            // remove query
+            .split('?')[0]
+
+        // can make this faster using some sort of tree structure
+        return whitelist.includes(hostname)
     }
 
     chrome.webRequest.onBeforeRequest.addListener(
         // second type check in case the browser forwards the wrong request
-        ({url, type}) => (log("Blocked", url), (type == "main_frame" || isAllowed(url)) ? allow : block),
+        ({url, type}) => (type == "main_frame" || isAllowed(url)) ? allow : (log("Blocked", url), block),
         {urls, types},
         ["blocking"]
     )
